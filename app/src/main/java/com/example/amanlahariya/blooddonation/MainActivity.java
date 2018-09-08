@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity
             ft.replace(R.id.fragment_main,fragment);
             ft.commit();
         } else if (id == R.id.nav_blood_bank) {
-            fragment = new HomeFragment();
+            fragment = new BloodBankFragmnet();
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.fragment_main,fragment);
