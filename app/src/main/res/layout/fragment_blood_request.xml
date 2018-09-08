@@ -5,11 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".BloodRequestFragment">
-    <!--android:background="#e42e2e"-->>
-<FrameLayout
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <!--android:background="#e42e2e"-->
 
     <!-- TODO: Update blank fragment layout -->
     <android.support.design.widget.BottomNavigationView
@@ -23,10 +19,15 @@
         app:itemTextColor="#000000"
         app:menu="@menu/blood_request_menu" />
 
-    <fragment
-        android:id="@+id/fragment_blood_request"
+    <!--<fragment
+        android:id="@+id/blood_request_placeholder"
         android:name="com.example.amanlahariya.blooddonation.NearByFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</FrameLayout>
+        android:layout_height="match_parent" />-->
+
+    <FrameLayout
+        android:id="@+id/blood_request_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
 </android.support.design.widget.CoordinatorLayout>

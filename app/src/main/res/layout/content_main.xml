@@ -8,12 +8,17 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <fragment
-        android:id="@+id/fragment_main"
-        android:name="com.example.amanlahariya.blooddonation.HomeFragment"
+    <!--<fragment
+        android:id="@+id/fragment_container_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+        android:name="com.example.amanlahariya.blooddonation.CreateRequestFragment"/>-->
+
+    <FrameLayout
+        android:id="@+id/content_main_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
 
 </android.support.constraint.ConstraintLayout>

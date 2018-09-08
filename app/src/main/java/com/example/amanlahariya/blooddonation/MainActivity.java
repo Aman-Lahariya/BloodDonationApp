@@ -26,14 +26,14 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.float_edit);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.float_edit);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -43,6 +43,15 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        // Replace the contents of the container with the new fragment
+        ft.replace(R.id.content_main_placeholder, new HomeFragment());
+        // or ft.add(R.id.your_placeholder, new FooFragment());
+        // Complete the changes added above
+        ft.commit();
     }
 
     @Override
@@ -87,25 +96,25 @@ public class MainActivity extends AppCompatActivity
             fragment = new HomeFragment();
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment_main,fragment);
+            ft.replace(R.id.content_main_placeholder,fragment);
             ft.commit();
         } else if (id == R.id.nav_blood_request) {
             fragment = new BloodRequestFragment();
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment_main,fragment);
+            ft.replace(R.id.content_main_placeholder,fragment);
             ft.commit();
         } else if (id == R.id.nav_blood_bank) {
-            fragment = new HomeFragment();
+            fragment = new BloodBankFragmnet();
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment_main,fragment);
+            ft.replace(R.id.content_main_placeholder,fragment);
             ft.commit();
         } else if (id == R.id.nav_setting) {
             fragment = new HomeFragment();
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment_main,fragment);
+            ft.replace(R.id.content_main_placeholder,fragment);
             ft.commit();
         }
 
@@ -114,3 +123,4 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 }
+

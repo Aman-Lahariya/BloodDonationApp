@@ -2,16 +2,13 @@ package com.example.amanlahariya.blooddonation;
 
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 
 
 public class BloodRequestFragment extends Fragment
@@ -25,6 +22,12 @@ public class BloodRequestFragment extends Fragment
     public void onViewCreated(View view,Bundle savedInstanceState){
         BottomNavigationView navigationView = (BottomNavigationView) getView().findViewById(R.id.bottom_nav_view);
         navigationView.setOnNavigationItemSelectedListener(this);
+
+        Fragment fragmentShow = new NearByFragment();
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.blood_request_placeholder, fragmentShow);
+        ft.commit();
     }
 
     @Override
@@ -38,24 +41,24 @@ public class BloodRequestFragment extends Fragment
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        Fragment fragment;
+        Fragment fragmentShow;
         if (id == R.id.nav_near_by) {
-            fragment = new NearByFragment();
+            fragmentShow = new NearByFragment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment_blood_request, fragment);
+            ft.replace(R.id.blood_request_placeholder, fragmentShow);
             ft.commit();
         } else if (id == R.id.nav_my_request) {
-            fragment = new MyRequestFragment();
+            fragmentShow = new MyRequestFragment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment_blood_request, fragment);
+            ft.replace(R.id.blood_request_placeholder, fragmentShow);
             ft.commit();
         } else if (id == R.id.nav_create_request) {
-            fragment = new CreateRequestFragment();
+            fragmentShow = new CreateRequestFragment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment_blood_request, fragment);
+            ft.replace(R.id.blood_request_placeholder, fragmentShow);
             ft.commit();
         }
         return true;

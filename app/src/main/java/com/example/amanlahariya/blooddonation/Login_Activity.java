@@ -78,15 +78,15 @@ public class Login_Activity extends AppCompatActivity {
 
         else {
             // perform the user login attempt.
-            if(user.equals("12345") && pass.equals("12345")) {
+           /* if(user.equals("12345") && pass.equals("12345")) {*/
                 Intent intent_dash = new Intent(Login_Activity.this,MainActivity.class);
                 startActivity(intent_dash);
-            }
+            /*}
             else
-            {
+            {*/
                 Toast toast = Toast.makeText(getApplicationContext(),"Incorrect username or password!",Toast.LENGTH_LONG);
                 toast.show();
-            }
+            /*}*/
         }
     }
 }
