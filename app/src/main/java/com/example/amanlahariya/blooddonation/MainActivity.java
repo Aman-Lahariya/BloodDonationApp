@@ -87,25 +87,25 @@ public class MainActivity extends AppCompatActivity
             fragment = new HomeFragment();
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment,fragment);
+            ft.replace(R.id.fragment_main,fragment);
             ft.commit();
         } else if (id == R.id.nav_blood_request) {
             fragment = new BloodRequestFragment();
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment,fragment);
+            ft.replace(R.id.fragment_main,fragment);
             ft.commit();
         } else if (id == R.id.nav_blood_bank) {
             fragment = new HomeFragment();
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment,fragment);
+            ft.replace(R.id.fragment_main,fragment);
             ft.commit();
         } else if (id == R.id.nav_setting) {
             fragment = new HomeFragment();
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment,fragment);
+            ft.replace(R.id.fragment_main,fragment);
             ft.commit();
         }
 
