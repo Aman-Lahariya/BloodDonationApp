@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 
 public class HomeFragment extends Fragment {
-    /*public void onViewCreated(View view,Bundle savedInstanceState){
+    public void onViewCreated(View view,Bundle savedInstanceState){
         FloatingActionButton fab = (FloatingActionButton) getView().findViewById(R.id.float_edit);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -20,7 +20,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-    }*/
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
