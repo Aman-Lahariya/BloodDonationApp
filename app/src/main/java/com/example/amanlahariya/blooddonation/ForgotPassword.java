@@ -3,7 +3,11 @@ package com.example.amanlahariya.blooddonation;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class forgot_password extends AppCompatActivity {
+public class ForgotPassword extends AppCompatActivity {
+
+    public ForgotPassword() {
+        // Required empty public constructor
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

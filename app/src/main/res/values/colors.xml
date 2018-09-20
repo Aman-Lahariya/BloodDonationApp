@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#0f3ef8</color>
     <color name="colorAccent">#ce2049</color>
     <color name="bloodColorTheme">#d33d3d</color>
-    <color name="borderColor">#504f4f</color>
+    <color name="borderColorDark">#dedcdc</color>
+    <color name="textBackgroundColor">#f2eeee</color>
 </resources>
