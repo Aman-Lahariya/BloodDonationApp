@@ -1,4 +1,4 @@
-package com.example.amanlahariya.blooddonation;
+package com.example.amanlahariya.blooddonation.AccountActivity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.amanlahariya.blooddonation.MainActivity;
+import com.example.amanlahariya.blooddonation.R;
 
 
 public class Login_Activity extends AppCompatActivity {
