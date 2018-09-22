@@ -7,7 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Spinner;
+import android.widget.TextView;
 
 
 public class CreateRequestFragment extends Fragment {
@@ -24,4 +25,9 @@ public class CreateRequestFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_create_request, container, false);
     }
 
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        Spinner spinnerBloogGroup = (Spinner) getView().findViewById(R.id.spinner_BloodGroup);
+
+    }
 }
