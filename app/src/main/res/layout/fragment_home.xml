@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <android.support.design.widget.FloatingActionButton
+           <!-- <android.support.design.widget.FloatingActionButton
                 android:id="@+id/float_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardView5"
                 app:layout_constraintVertical_bias="0.666"
-                app:srcCompat="@drawable/ic_edit" />
+                app:srcCompat="@drawable/ic_edit" />-->
 
             <android.support.v7.widget.CardView
                 android:id="@+id/cardView5"
@@ -279,7 +279,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/ic_blood_24dp" />
+                        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
 
                     <TextView
                         android:id="@+id/textView7"

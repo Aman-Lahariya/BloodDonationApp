@@ -12,14 +12,14 @@ import android.view.ViewGroup;
 
 public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
-        FloatingActionButton fab = (FloatingActionButton) getView().findViewById(R.id.float_edit);
+       /* FloatingActionButton fab = (FloatingActionButton) getView().findViewById(R.id.float_edit);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
 
     }
     @Override

@@ -109,6 +109,9 @@
     <string name="blood_group"> " Blood Group" </string>
     <string name="pincode"> " Pincode" </string>
 
+    <!-- Strings related to fragment_my_request -->
+    <string name="raise_blood_request"> " Raise a blood requset to fill this place" </string>
+
     <!-- Strings related to fragment_create_request -->
     <string name="patient_name"> " Patient Name" </string>
     <string name="date"> " Date" </string>
@@ -116,7 +119,7 @@
     <string name="city"> " City" </string>
     <string name="blood_units">" Blood Units" </string>
     <string-array name="blood_group">
-        <item> Blood Group </item>
+        <!--<item> Blood Group </item>-->
         <item> A+ve </item>
         <item> A-ve </item>
         <item> B+ve </item>
@@ -127,7 +130,7 @@
         <item> O-ve </item>
     </string-array>
     <string-array name="blood_unit">
-        <item> Blood Unit </item>
+        <!--<item> Blood Unit </item>-->
         <item> 1 </item>
         <item> 2 </item>
         <item> 3 </item>
@@ -173,9 +176,11 @@
     <string name="zainul"> Zainul Ongnawala </string>
     <string name="aziz"> Aziz Gura </string>
     <string name="chirag"> Chirag Jain </string>
-    
+
     <!-- Strings related to buttons-->
     <string name="save"> Save </string>
     <string name="change"> Change </string>
     <string name="submit"> Submit </string>
+    <string name="allow"> Allow </string>
+    <string name="title_activity_maps">Map</string>
 </resources>

@@ -58,18 +58,18 @@ public class Login_Activity extends AppCompatActivity {
         boolean cancel = false;
         View focusView = null;
 
-        if (TextUtils.isEmpty(user)) {
-            etMobileView.setError(getString(R.string.error_field_required));
-            focusView = etMobileView;
-            cancel = true;
-        }
-
         if (TextUtils.isEmpty(pass)) {
             etPasswordView.setError(getString(R.string.error_field_required));
             focusView = etPasswordView;
             cancel = true;
         }
 
+        if (TextUtils.isEmpty(user)) {
+            etMobileView.setError(getString(R.string.error_field_required));
+            focusView = etMobileView;
+            cancel = true;
+        }
+        
         if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.

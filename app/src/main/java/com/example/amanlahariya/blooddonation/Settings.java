@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +22,9 @@ public class Settings extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -49,6 +49,7 @@ public class Settings extends Fragment {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.content_main_placeholder,fragment);
+                ft.addToBackStack(null);
                 ft.commit();
             }
         });
@@ -96,6 +97,7 @@ public class Settings extends Fragment {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.content_main_placeholder,fragment);
+                ft.addToBackStack(null);
                 ft.commit();
             }
         });
@@ -107,6 +109,7 @@ public class Settings extends Fragment {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.content_main_placeholder,fragment);
+                ft.addToBackStack(null);
                 ft.commit();
             }
         });
