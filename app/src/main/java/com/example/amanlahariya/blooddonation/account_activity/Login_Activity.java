@@ -1,4 +1,4 @@
-package com.example.amanlahariya.blooddonation.AccountActivity;
+package com.example.amanlahariya.blooddonation.account_activity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -49,7 +49,7 @@ public class Login_Activity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent_sign = new Intent(Login_Activity.this, SignupActivity.class);
+                Intent intent_sign = new Intent(Login_Activity.this, com.example.amanlahariya.blooddonation.account_activity.SignupActivity.class);
                 startActivity(intent_sign);
             }
         });
@@ -57,7 +57,7 @@ public class Login_Activity extends AppCompatActivity {
         forgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent_forgot = new Intent(Login_Activity.this, forgot_password.class);
+                Intent intent_forgot = new Intent(Login_Activity.this,ForgotPassword.class);
                 startActivity(intent_forgot);
             }
         });
@@ -67,18 +67,18 @@ public class Login_Activity extends AppCompatActivity {
         boolean cancel = false;
         View focusView = null;
 
-        if (TextUtils.isEmpty(user)) {
-            etMobileView.setError(getString(R.string.error_field_required));
-            focusView = etMobileView;
-            cancel = true;
-        }
-
         if (TextUtils.isEmpty(pass)) {
             etPasswordView.setError(getString(R.string.error_field_required));
             focusView = etPasswordView;
             cancel = true;
         }
 
+        if (TextUtils.isEmpty(user)) {
+            etMobileView.setError(getString(R.string.error_field_required));
+            focusView = etMobileView;
+            cancel = true;
+        }
+        
         if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
@@ -97,7 +97,11 @@ public class Login_Activity extends AppCompatActivity {
                                 Log.d(TAG, "signInWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 //updateUI(user);
+<<<<<<< HEAD:app/src/main/java/com/example/amanlahariya/blooddonation/AccountActivity/Login_Activity.java
                                 Intent intent_sign = new Intent(Login_Activity.this, MainActivity.class);
+=======
+                                Intent intent_sign = new Intent(Login_Activity.this,MainActivity.class);
+>>>>>>> master:app/src/main/java/com/example/amanlahariya/blooddonation/account_activity/Login_Activity.java
                                 startActivity(intent_sign);
                             } else {
                                 // If sign in fails, display a message to the user.

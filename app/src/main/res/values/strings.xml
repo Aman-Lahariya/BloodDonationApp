@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Blood Donation</string>
     <string name="developer_name"> Aman Lahariya </string>
+<<<<<<< HEAD
 
     <!-- Strings related to login -->
 
@@ -12,6 +13,8 @@
     <string name="error_incorrect_password"> This password is incorrect </string>
     <string name="error_field_required"> This field is required </string>
 
+=======
+>>>>>>> master
 
     <!-- Strings related to permissions -->
     <string name="permision_location">Please allow location access</string>
@@ -113,12 +116,14 @@
     <!-- ___________________Strings related to fragments & activity___________________ -->
 
     <!-- Strings related to fragment_home -->
-
     <string name="available_for_donation"> " Available For Donation" </string>
     <string name="full_name"> " Full Name" </string>
     <string name="address"> " Address" </string>
     <string name="blood_group"> " Blood Group" </string>
     <string name="pincode"> " Pincode" </string>
+
+    <!-- Strings related to fragment_my_request -->
+    <string name="raise_blood_request"> " Raise a blood requset to fill this place" </string>
 
     <!-- Strings related to fragment_create_request -->
     <string name="patient_name"> " Patient Name" </string>
@@ -127,29 +132,24 @@
     <string name="city"> " City" </string>
     <string name="blood_units">" Blood Units" </string>
     <string-array name="blood_group">
-        <item> Blood Group </item>
-        <item> A+ve </item>
-        <item> A-ve </item>
-        <item> B+ve </item>
-        <item> B-ve </item>
-        <item> AB+ve </item>
-        <item> AB-ve </item>
-        <item> O+ve </item>
-        <item> O-ve </item>
+        <!--<item> Blood Group </item>-->
+        <item> A+ve </item>  <item> A-ve </item>
+        <item> B+ve </item>  <item> B-ve </item>
+        <item> AB+ve </item> <item> AB-ve </item>
+        <item> O+ve </item>  <item> O-ve </item>
     </string-array>
     <string-array name="blood_unit">
-        <item> Blood Unit </item>
-        <item> 1 </item>
-        <item> 2 </item>
-        <item> 3 </item>
-        <item> 4 </item>
-        <item> 5 </item>
-        <item> 6 </item>
-        <item> 7 </item>
-        <item> 8 </item>
-        <item> 9 </item>
-        <item> 10 </item>
+        <!--<item> Blood Unit </item>-->
+        <item> 1 </item> <item> 2 </item>
+        <item> 3 </item> <item> 4 </item>
+        <item> 5 </item> <item> 6 </item>
+        <item> 7 </item> <item> 8 </item>
+        <item> 9 </item> <item> 10 </item>
     </string-array>
+
+    !-- Strings related to fragment_blood_bank -->
+    <string name="hospital"> "Hospital" </string>
+    <string name="search_here"> " Enter your search here..." </string>
 
     <!-- Strings related to fragment_settings -->
     <string name="general"> General </string>
@@ -159,11 +159,46 @@
     <string name="feedback"> " Feedback" </string>
     <string name="our_team"> " Our Team" </string>
     <string name="forgot_password"> Forgot Password </string>
+<<<<<<< HEAD
 
+=======
+
+    <!-- Strings related to login -->
+    <string name="prompt_mobile"> " Enter Your Mobile Number" </string>
+    <string name="prompt_register_mobile"> " Enter Your Registered Mobile Number" </string>
+    <string name="prompt_password"> " Enter Your Password" </string>
+    <string name="action_sign_in"> "Sign in or register" </string>
+    <string name="action_sign_in_short"> "Sign in" </string>
+    <string name="error_invalid_email"> This email address is invalid </string>
+    <string name="error_invalid_password"> This password is too short </string>
+    <string name="error_incorrect_password"> This password is incorrect </string>
+    <string name="error_field_required"> This field is required </string>
+    <string name="old_password">" Old Password"</string>
+    <string name="new_password">" New Password"</string>
+    <string name="confirm_password">" Confirm Password"</string>
+
+    <!-- Strings related to our team -->
+    <string name="programmer"> Programmer </string>
+    <string name="uml"> UML Designser </string>
+    <string name="dba"> DBA </string>
+    <string name="abhay"> Abhaysingh Andotra </string>
+    <string name="zainul"> Zainul Ongnawala </string>
+    <string name="aziz"> Aziz Gura </string>
+    <string name="chirag"> Chirag Jain </string>
+
+    <!-- Strings related to buttons-->
+    <string name="save"> Save </string>
+    <string name="change"> Change </string>
+    <string name="submit"> Submit </string>
+    <string name="allow"> Allow </string>
+    <string name="search"> Search </string>
+    <string name="title_activity_maps">Map</string>
+=======
+>>>>>>> master
     <!--<string name="change_password"> Change Password </string>-->
 
     //string values given by chirag
-    <string name="action_sign_in_short">Register</string>
+    <string name="register">Register</string>
     <string name="email">Email</string>
     <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
     <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
@@ -178,7 +213,6 @@
     <string name="hint_password">Password</string>
     <string name="hint_name">Fullname</string>
     <string name="btn_login">LOGIN</string>
-    <string name="prompt_password">Please enter your password</string>
     <string name="btn_link_to_register">Not a member? Get registered in Firebase now!</string>
     <string name="btn_link_to_login">Already registered. Login Me!</string>
     <string name="title_activity_reset_password">ResetPasswordActivity</string>
@@ -193,6 +227,7 @@
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="email_id">Email ID</string>
+<<<<<<< HEAD
 
     <!-- Strings related to login-->
     <string name="prompt_mobile"> " Enter Your Mobile Number" </string>
@@ -218,4 +253,7 @@
     <string name="change"> Change </string>
     <string name="submit"> Submit </string>
 
+=======
+>>>>>>> Chirag
+>>>>>>> master
 </resources>

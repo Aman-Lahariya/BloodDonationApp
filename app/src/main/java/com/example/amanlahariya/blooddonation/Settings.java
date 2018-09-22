@@ -13,7 +13,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 import com.example.amanlahariya.blooddonation.AccountActivity.change_password;
+=======
+import com.example.amanlahariya.blooddonation.account_activity.ChangePassword;
+import com.example.amanlahariya.blooddonation.account_activity.ForgotPassword;
+import com.example.amanlahariya.blooddonation.account_activity.Login_Activity;
+>>>>>>> master
 
 public class Settings extends Fragment {
     /*private TextView changePass;*/
@@ -22,11 +28,9 @@ public class Settings extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -51,6 +55,7 @@ public class Settings extends Fragment {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.content_main_placeholder,fragment);
+                ft.addToBackStack(null);
                 ft.commit();
             }
         });
@@ -98,6 +103,7 @@ public class Settings extends Fragment {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.content_main_placeholder,fragment);
+                ft.addToBackStack(null);
                 ft.commit();
             }
         });
@@ -109,6 +115,7 @@ public class Settings extends Fragment {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.content_main_placeholder,fragment);
+                ft.addToBackStack(null);
                 ft.commit();
             }
         });

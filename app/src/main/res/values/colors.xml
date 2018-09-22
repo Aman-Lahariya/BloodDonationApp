@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--<color name="colorPrimary">#4c85ef</color>-->
-    <!--<color name="colorPrimaryDark">#0f3ef8</color>-->
-    <!--<color name="colorAccent">#ce2049</color>-->
+    <color name="colorPrimary">#d33d3d</color>
+    <color name="colorPrimaryDark">#e62b2b</color>
+    <color name="colorAccent">#ce2049</color>
     <color name="bloodColorTheme">#d33d3d</color>
+<<<<<<< HEAD
 
+=======
+    <color name="borderColorDark">#dedcdc</color>
+    <color name="textBackgroundColor">#f2eeee</color>
+
+    <!--<color name="colorPrimary">#4c85ef</color>
+    <color name="colorPrimaryDark">#0f3ef8</color>-->
+    <!--<color name="colorAccent">#ce2049</color>-->
+    <!--<color name="bloodColorTheme">#d33d3d</color>-->
+>>>>>>> master
     <color name="borderColor">#504f4f</color>
 
     //refrenced colors edited by chirag
-    <color name="colorPrimary">#00bfbf</color>
+<!--    <color name="colorPrimary">#00bfbf</color>
     <color name="colorPrimaryDark">#555959</color>
-    <color name="colorAccent">#009e9e</color>
+    <color name="colorAccent">#009e9e</color>-->
 
     <color name="bg_login">#26ae90</color>
     <color name="bg_register">#2e3237</color>
@@ -25,8 +35,11 @@
     <color name="btn_login_bg">#eceef1</color>
     <color name="lbl_name">#333333</color>
     <color name="btn_logut_bg">#ff6861</color>
+<<<<<<< HEAD
 
     <color name="borderColorDark">#dedcdc</color>
     <color name="textBackgroundColor">#f2eeee</color>
 
+=======
+>>>>>>> master
 </resources>

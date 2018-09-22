@@ -32,13 +32,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        // Replace the contents of the container with the new fragment
         ft.replace(R.id.content_main_placeholder, new HomeFragment());
-        // or ft.add(R.id.your_placeholder, new FooFragment());
-        // Complete the changes added above
         ft.commit();
     }
 
@@ -72,6 +67,7 @@ public class MainActivity extends AppCompatActivity
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.content_main_placeholder,fragment);
+            ft.addToBackStack(null);
             ft.commit();
             return true;
         }
@@ -91,8 +87,9 @@ public class MainActivity extends AppCompatActivity
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.content_main_placeholder,fragment);
-            // TO change the tile of toolbar
+            ft.addToBackStack(null);
 
+            // TO change the tile of toolbar
             Toolbar mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(mActionBarToolbar);
             getSupportActionBar().setTitle("Home");
@@ -103,6 +100,7 @@ public class MainActivity extends AppCompatActivity
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.content_main_placeholder,fragment);
+            ft.addToBackStack(null);
 
             Toolbar mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(mActionBarToolbar);
@@ -114,6 +112,7 @@ public class MainActivity extends AppCompatActivity
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.content_main_placeholder,fragment);
+            ft.addToBackStack(null);
 
             Toolbar mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(mActionBarToolbar);
@@ -125,6 +124,7 @@ public class MainActivity extends AppCompatActivity
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.content_main_placeholder,fragment);
+            ft.addToBackStack(null);
 
             Toolbar mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(mActionBarToolbar);
