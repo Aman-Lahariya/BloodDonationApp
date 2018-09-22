@@ -1,7 +1,9 @@
-package com.example.amanlahariya.blooddonation;
+package com.example.amanlahariya.blooddonation.account_activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.amanlahariya.blooddonation.R;
 
 public class ForgotPassword extends AppCompatActivity {
 

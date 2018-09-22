@@ -1,4 +1,4 @@
-package com.example.amanlahariya.blooddonation.AccountActivity;
+package com.example.amanlahariya.blooddonation.account_activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -50,7 +50,7 @@ public class Login_Activity extends AppCompatActivity {
         forgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent_forgot = new Intent(Login_Activity.this, forgot_password .class);
+                Intent intent_forgot = new Intent(Login_Activity.this,ForgotPassword.class);
                 startActivity(intent_forgot);
             }
         });

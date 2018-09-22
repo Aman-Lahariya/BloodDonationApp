@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AccountActivity.Login_Activity"
+    tools:context=".account_activity.Login_Activity"
     tools:layout_editor_absoluteY="81dp">
 
     <TextView
@@ -46,7 +46,7 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/prompt_mobile"
-        android:drawableLeft="@drawable/ic_phone_android_black_24dp"
+        android:drawableStart="@drawable/ic_phone_android_black_24dp"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -60,7 +60,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:drawableLeft="@drawable/ic_lock_open_black_24dp"
+        android:drawableStart="@drawable/ic_lock_open_black_24dp"
         android:ems="10"
         android:hint="@string/prompt_password"
         android:inputType="textPassword"

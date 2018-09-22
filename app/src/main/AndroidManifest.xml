@@ -25,16 +25,14 @@
         android:roundIcon="@mipmap/ic_launcher_blood_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AccountActivity.Login_Activity" android:screenOrientation="portrait">
+        <activity android:name=".account_activity.Login_Activity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ForgotPassword" android:screenOrientation="portrait"/>
-=======
-        <activity android:name=".AccountActivity.forgot_password" />
+        <activity android:name=".account_activity.ForgotPassword" android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"

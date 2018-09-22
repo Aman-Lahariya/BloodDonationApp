@@ -6,16 +6,16 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.amanlahariya.blooddonation.AccountActivity.Login_Activity;
+import com.example.amanlahariya.blooddonation.account_activity.ChangePassword;
+import com.example.amanlahariya.blooddonation.account_activity.ForgotPassword;
+import com.example.amanlahariya.blooddonation.account_activity.Login_Activity;
 
 public class Settings extends Fragment {
     /*private TextView changePass;*/
@@ -76,7 +76,7 @@ public class Settings extends Fragment {
                                 Toast toast = Toast.makeText(getContext(),"Successfully Logged Out!",Toast.LENGTH_LONG);
                                 toast.show();
 
-                                Intent intent_login = new Intent(getActivity(),Login_Activity .class);
+                                Intent intent_login = new Intent(getActivity(),Login_Activity.class);
                                 startActivity(intent_login);
                             }
                         })
