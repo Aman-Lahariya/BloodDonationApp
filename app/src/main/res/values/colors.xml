@@ -4,7 +4,7 @@
     <!--<color name="colorPrimaryDark">#0f3ef8</color>-->
     <!--<color name="colorAccent">#ce2049</color>-->
     <color name="bloodColorTheme">#d33d3d</color>
-<<<<<<< HEAD
+
     <color name="borderColor">#504f4f</color>
 
     //refrenced colors edited by chirag
@@ -25,8 +25,8 @@
     <color name="btn_login_bg">#eceef1</color>
     <color name="lbl_name">#333333</color>
     <color name="btn_logut_bg">#ff6861</color>
-=======
+
     <color name="borderColorDark">#dedcdc</color>
     <color name="textBackgroundColor">#f2eeee</color>
->>>>>>> master
+
 </resources>

@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.amanlahariya.blooddonation.AccountActivity.change_password;
+
 public class Settings extends Fragment {
     /*private TextView changePass;*/
 
@@ -45,7 +47,7 @@ public class Settings extends Fragment {
         changePass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment fragment = new ChangePassword();
+                Fragment fragment = new change_password();
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.content_main_placeholder,fragment);

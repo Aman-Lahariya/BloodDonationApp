@@ -1,19 +1,17 @@
 <resources>
     <string name="app_name">Blood Donation</string>
     <string name="developer_name"> Aman Lahariya </string>
-<<<<<<< HEAD
+
     <!-- Strings related to login -->
-    <string name="prompt_mobile"> " Enter Your email address" </string> <!--chirag-->
-    <string name="prompt_register_mobile"> " Enter Your Registered Mobile Number" </string>
-    <!--<string name="prompt_password"> " Enter Your Password" </string>-->
+
+
     <string name="action_sign_in"> "Sign in or register" </string>
     <!--<string name="action_sign_in_short"> "Sign in" </string>-->
     <string name="error_invalid_email"> This email address is invalid </string>
     <string name="error_invalid_password"> This password is too short </string>
     <string name="error_incorrect_password"> This password is incorrect </string>
     <string name="error_field_required"> This field is required </string>
-=======
->>>>>>> master
+
 
     <!-- Strings related to permissions -->
     <string name="permision_location">Please allow location access</string>
@@ -161,7 +159,7 @@
     <string name="feedback"> " Feedback" </string>
     <string name="our_team"> " Our Team" </string>
     <string name="forgot_password"> Forgot Password </string>
-<<<<<<< HEAD
+
     <!--<string name="change_password"> Change Password </string>-->
 
     //string values given by chirag
@@ -195,20 +193,13 @@
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="email_id">Email ID</string>
-=======
-    <string name="change_password"> Change Password </string>
 
-
-    <!-- Strings related to login -->
+    <!-- Strings related to login-->
     <string name="prompt_mobile"> " Enter Your Mobile Number" </string>
     <string name="prompt_register_mobile"> " Enter Your Registered Mobile Number" </string>
-    <string name="prompt_password"> " Enter Your Password" </string>
-    <string name="action_sign_in"> "Sign in or register" </string>
-    <string name="action_sign_in_short"> "Sign in" </string>
-    <string name="error_invalid_email"> This email address is invalid </string>
-    <string name="error_invalid_password"> This password is too short </string>
-    <string name="error_incorrect_password"> This password is incorrect </string>
-    <string name="error_field_required"> This field is required </string>
+
+
+    
     <string name="old_password">" Old Password"</string>
     <string name="new_password">" New Password"</string>
     <string name="confirm_password">" Confirm Password"</string>
@@ -226,5 +217,5 @@
     <string name="save"> Save </string>
     <string name="change"> Change </string>
     <string name="submit"> Submit </string>
->>>>>>> master
+
 </resources>
