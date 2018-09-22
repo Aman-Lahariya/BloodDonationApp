@@ -53,6 +53,8 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"/>
+
+        <activity android:name=".account_activity.SignupActivity"/>
     </application>
 
 </manifest>

@@ -1,36 +1,43 @@
 package com.example.amanlahariya.blooddonation.account_activity;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import com.example.amanlahariya.blooddonation.MainActivity;
 import com.example.amanlahariya.blooddonation.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class Login_Activity extends AppCompatActivity {
 
     private EditText etMobileView;
     private EditText etPasswordView;
-    private Button login;
-    private Button forgot;
-    private Button register;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         etMobileView = (EditText) findViewById(R.id.editText_Mobile);
         etPasswordView = (EditText) findViewById(R.id.editText_Password);
-        login = (Button) findViewById(R.id.bt_Sing_In);
-        forgot = (Button) findViewById(R.id.bt_Forgot_Password);
-        register = (Button) findViewById(R.id.bt_Register);
+        Button login = (Button) findViewById(R.id.bt_Sing_In);
+        Button forgot = (Button) findViewById(R.id.bt_Forgot_Password);
+        Button register = (Button) findViewById(R.id.bt_Register);
+        mAuth = FirebaseAuth.getInstance();
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,8 +49,8 @@ public class Login_Activity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent_sign = new Intent(Login_Activity.this,Sign_Up.class);
-                //startActivity(intent_sign);
+                Intent intent_sign = new Intent(Login_Activity.this, com.example.amanlahariya.blooddonation.account_activity.SignupActivity.class);
+                startActivity(intent_sign);
             }
         });
 
@@ -56,8 +63,7 @@ public class Login_Activity extends AppCompatActivity {
         });
     }
 
-    protected void validate(String user, String pass)
-    {
+    protected void validate(String user, String pass) {
         boolean cancel = false;
         View focusView = null;
 
@@ -80,16 +86,28 @@ public class Login_Activity extends AppCompatActivity {
         }
 
         else {
-            // perform the user login attempt.
-           /* if(user.equals("12345") && pass.equals("12345")) {*/
-                Intent intent_dash = new Intent(Login_Activity.this,MainActivity.class);
-                startActivity(intent_dash);
-            /*}
-            else
-            {*/
-                Toast toast = Toast.makeText(getApplicationContext(),"Incorrect username or password!",Toast.LENGTH_LONG);
-                toast.show();
-            /*}*/
+            mAuth.signInWithEmailAndPassword(user, pass)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        private static final String TAG = "MainActivity";
+
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "signInWithEmail:success");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                //updateUI(user);
+                                Intent intent_sign = new Intent(Login_Activity.this,MainActivity.class);
+                                startActivity(intent_sign);
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                Toast.makeText(Login_Activity.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                                //updateUI(null);
+                            }
+                        }
+                    });
         }
     }
 }
