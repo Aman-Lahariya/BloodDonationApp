@@ -102,7 +102,6 @@
     <!-- ___________________Strings related to fragments & activity___________________ -->
 
     <!-- Strings related to fragment_home -->
-
     <string name="available_for_donation"> " Available For Donation" </string>
     <string name="full_name"> " Full Name" </string>
     <string name="address"> " Address" </string>
@@ -120,28 +119,23 @@
     <string name="blood_units">" Blood Units" </string>
     <string-array name="blood_group">
         <!--<item> Blood Group </item>-->
-        <item> A+ve </item>
-        <item> A-ve </item>
-        <item> B+ve </item>
-        <item> B-ve </item>
-        <item> AB+ve </item>
-        <item> AB-ve </item>
-        <item> O+ve </item>
-        <item> O-ve </item>
+        <item> A+ve </item>  <item> A-ve </item>
+        <item> B+ve </item>  <item> B-ve </item>
+        <item> AB+ve </item> <item> AB-ve </item>
+        <item> O+ve </item>  <item> O-ve </item>
     </string-array>
     <string-array name="blood_unit">
         <!--<item> Blood Unit </item>-->
-        <item> 1 </item>
-        <item> 2 </item>
-        <item> 3 </item>
-        <item> 4 </item>
-        <item> 5 </item>
-        <item> 6 </item>
-        <item> 7 </item>
-        <item> 8 </item>
-        <item> 9 </item>
-        <item> 10 </item>
+        <item> 1 </item> <item> 2 </item>
+        <item> 3 </item> <item> 4 </item>
+        <item> 5 </item> <item> 6 </item>
+        <item> 7 </item> <item> 8 </item>
+        <item> 9 </item> <item> 10 </item>
     </string-array>
+
+    !-- Strings related to fragment_blood_bank -->
+    <string name="hospital"> "Hospital" </string>
+    <string name="search_here"> " Enter your search here..." </string>
 
     <!-- Strings related to fragment_settings -->
     <string name="general"> General </string>
@@ -152,7 +146,6 @@
     <string name="our_team"> " Our Team" </string>
     <string name="forgot_password"> Forgot Password </string>
     <string name="change_password"> Change Password </string>
-
 
     <!-- Strings related to login -->
     <string name="prompt_mobile"> " Enter Your Mobile Number" </string>
@@ -182,5 +175,6 @@
     <string name="change"> Change </string>
     <string name="submit"> Submit </string>
     <string name="allow"> Allow </string>
+    <string name="search"> Search </string>
     <string name="title_activity_maps">Map</string>
 </resources>
