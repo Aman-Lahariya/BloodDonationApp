@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.amanlahariya.blooddonation.AccountActivity.Login_Activity;
+
 public class Settings extends Fragment {
     /*private TextView changePass;*/
 
@@ -74,7 +76,7 @@ public class Settings extends Fragment {
                                 Toast toast = Toast.makeText(getContext(),"Successfully Logged Out!",Toast.LENGTH_LONG);
                                 toast.show();
 
-                                Intent intent_login = new Intent(getActivity(),Login_Activity.class);
+                                Intent intent_login = new Intent(getActivity(),Login_Activity .class);
                                 startActivity(intent_login);
                             }
                         })
