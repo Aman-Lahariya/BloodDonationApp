@@ -2,7 +2,7 @@
     <string name="app_name">Blood Donation</string>
     <string name="developer_name"> Aman Lahariya </string>
     <!-- Strings related to login -->
-    <string name="prompt_mobile"> " Enter Your Mobile Number" </string>
+    <string name="prompt_mobile"> " Enter Your email address" </string> <!--chirag-->
     <string name="prompt_register_mobile"> " Enter Your Registered Mobile Number" </string>
     <!--<string name="prompt_password"> " Enter Your Password" </string>-->
     <string name="action_sign_in"> "Sign in or register" </string>
