@@ -25,7 +25,7 @@
         android:roundIcon="@mipmap/ic_launcher_blood_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".account_activity.Login_Activity" android:screenOrientation="portrait">
+        <activity android:name=".account_activity.LoginActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

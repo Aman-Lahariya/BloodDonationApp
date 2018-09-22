@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.example.amanlahariya.blooddonation.account_activity.ChangePassword;
 import com.example.amanlahariya.blooddonation.account_activity.ForgotPassword;
-import com.example.amanlahariya.blooddonation.account_activity.Login_Activity;
+import com.example.amanlahariya.blooddonation.account_activity.LoginActivity;
 
 public class Settings extends Fragment {
     /*private TextView changePass;*/
@@ -47,7 +47,7 @@ public class Settings extends Fragment {
         changePass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment fragment = new ChangePassword();
+                Fragment fragment = new Fragment();
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.content_main_placeholder,fragment);
@@ -76,7 +76,7 @@ public class Settings extends Fragment {
                                 Toast toast = Toast.makeText(getContext(),"Successfully Logged Out!",Toast.LENGTH_LONG);
                                 toast.show();
 
-                                Intent intent_login = new Intent(getActivity(),Login_Activity.class);
+                                Intent intent_login = new Intent(getActivity(),LoginActivity.class);
                                 startActivity(intent_login);
                             }
                         })
