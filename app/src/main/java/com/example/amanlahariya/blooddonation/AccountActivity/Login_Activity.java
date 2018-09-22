@@ -17,20 +17,16 @@ public class Login_Activity extends AppCompatActivity {
 
     private EditText etMobileView;
     private EditText etPasswordView;
-    private Button login;
-    private Button forgot;
-    private Button register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         etMobileView = (EditText) findViewById(R.id.editText_Mobile);
         etPasswordView = (EditText) findViewById(R.id.editText_Password);
-        login = (Button) findViewById(R.id.bt_Sing_In);
-        forgot = (Button) findViewById(R.id.bt_Forgot_Password);
-        register = (Button) findViewById(R.id.bt_Register);
+        Button login = (Button) findViewById(R.id.bt_Sing_In);
+        Button forgot = (Button) findViewById(R.id.bt_Forgot_Password);
+        Button register = (Button) findViewById(R.id.bt_Register);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,15 +38,15 @@ public class Login_Activity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent_sign = new Intent(Login_Activity.this,Sign_Up.class);
-                //startActivity(intent_sign);
+                Intent intent_sign = new Intent(Login_Activity.this, SignupActivity.class);
+                startActivity(intent_sign);
             }
         });
 
         forgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent_forgot = new Intent(Login_Activity.this,forgot_password.class);
+                Intent intent_forgot = new Intent(Login_Activity.this, forgot_password .class);
                 startActivity(intent_forgot);
             }
         });
@@ -86,10 +82,31 @@ public class Login_Activity extends AppCompatActivity {
                 startActivity(intent_dash);
             /*}
             else
-            {*/
+            {
                 Toast toast = Toast.makeText(getApplicationContext(),"Incorrect username or password!",Toast.LENGTH_LONG);
                 toast.show();
-            /*}*/
+            /*}
         }
-    }
+    }*/
+
+    mAuth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        @Override
+        public void onComplete(@NonNull Task<AuthResult> task) {
+            if (task.isSuccessful()) {
+                // Sign in success, update UI with the signed-in user's information
+                Log.d(TAG, "signInWithEmail:success");
+                FirebaseUser user = mAuth.getCurrentUser();
+                updateUI(user);
+            } else {
+                // If sign in fails, display a message to the user.
+                Log.w(TAG, "signInWithEmail:failure", task.getException());
+                Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show();
+                updateUI(null);
+            }
+
+            // ...
+        }
+    });
 }
