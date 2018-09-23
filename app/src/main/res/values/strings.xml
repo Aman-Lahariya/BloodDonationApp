@@ -69,7 +69,8 @@
     <string name="forgot_password"> Forgot Password </string>
 
     <!-- Strings related to login -->
-    <string name="prompt_mobile"> " Enter Your Mobile Number" </string>
+    <string name="prompt_email1"> " Enter Your email address" </string>
+    <string name="prompt_mobile"> " Enter Your mobile no." </string>
     <string name="prompt_register_mobile"> " Enter Your Registered Mobile Number" </string>
     <string name="prompt_password"> " Enter Your Password" </string>
     <string name="action_sign_in"> "Sign in or register" </string>
@@ -115,7 +116,9 @@
     <string name="hint_password">" Password"</string>
     <string name="hint_name">Fullname</string>
     <string name="btn_login">LOGIN</string>
-    <string name="btn_link_to_login">Already registered. Login Me!</string>
+    <string name="btn_link_to_register">Not a member? Get registered in Firebase now!</string>
+    <string name="btn_link_to_login">Already registered. Login!</string>
+    <string name="title_activity_reset_password">ResetPasswordActivity</string>
     <string name="btn_forgot_password">Forgot your password?</string>
     <string name="btn_reset_password">Reset Password</string>
     <string name="btn_back"><![CDATA[<< Back]]></string>
