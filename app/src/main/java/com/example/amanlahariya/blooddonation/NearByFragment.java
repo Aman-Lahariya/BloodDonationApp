@@ -22,8 +22,6 @@ public class NearByFragment extends Fragment {
         // Required empty public constructor
     }
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -31,7 +29,7 @@ public class NearByFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_near_by, container, false);
     }
 
-    @Override
+    /*@Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         allow = (Button) getView().findViewById(R.id.button_Allow_NearBy);
         allow.setOnClickListener(new View.OnClickListener() {
@@ -41,5 +39,5 @@ public class NearByFragment extends Fragment {
                 startActivity(i);
             }
         });
-    }
+    }*/
 }
