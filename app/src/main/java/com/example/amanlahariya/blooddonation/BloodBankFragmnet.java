@@ -123,7 +123,8 @@ public class BloodBankFragmnet extends Fragment implements OnMapReadyCallback {
         if(location!=null || !location.equals("")){
             Geocoder geocoder = new Geocoder(getActivity());
             try {
-                addressList = geocoder.getFromLocationName(location,1);
+                addressList = geocoder.getFromLocationName("Hospital",1);
+                Log.d("address",addressList.toString());
                 Address address = addressList.get(0);
                 LatLng latLng = new LatLng(address.getLatitude(),address.getLongitude());
                 mGoogleMap.addMarker(new MarkerOptions().position(latLng));
