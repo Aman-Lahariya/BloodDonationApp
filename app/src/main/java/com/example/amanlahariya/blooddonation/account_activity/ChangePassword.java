@@ -21,55 +21,49 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class ChangePassword extends AppCompatActivity {
-    private EditText inputEmail;
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
-
-
+    private EditText oldPass,newPass,cnfrmPass,emailAddr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgot_password);
-        inputEmail = (EditText) findViewById(R.id.email);
-        Button btnReset = (Button) findViewById(R.id.btn_reset_password);
-        Button btnBack = (Button) findViewById(R.id.btn_back);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        setContentView(R.layout.fragment_change_password);
+
+        emailAddr = (EditText) findViewById(R.id.editText_ChangePass_email);
+        oldPass = (EditText) findViewById(R.id.editText_OldPass);
+        newPass = (EditText) findViewById(R.id.editText_NewPass);
+        cnfrmPass = (EditText) findViewById(R.id.editText_CnfrmPass);
+        Button btnChange = (Button) findViewById(R.id.btn_ChangePassword);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar_ChangePass);
         mAuth = FirebaseAuth.getInstance();
 
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent_back = new Intent(ChangePassword.this, com.example.amanlahariya.blooddonation.account_activity.ChangePassword.class);
-                startActivity(intent_back);
-            }
-        });
-
-        btnReset.setOnClickListener(new View.OnClickListener() {
+        btnChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String email = inputEmail.getText().toString().trim();
+                String old = oldPass.getText().toString().trim();
+                String email = emailAddr.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplication(), "Enter your registered email id", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-                progressBar.setVisibility(View.VISIBLE);
-                mAuth.sendPasswordResetEmail(email)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(ChangePassword.this, "We have sent you instructions to reset your password!", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Toast.makeText(ChangePassword.this, "Failed to send reset email!", Toast.LENGTH_SHORT).show();
+                else {
+                    progressBar.setVisibility(View.VISIBLE);
+                    mAuth.sendPasswordResetEmail(email)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(ChangePassword.this, "We have sent you instructions to reset your password!", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(ChangePassword.this, "Failed to send reset email!", Toast.LENGTH_SHORT).show();
+                                    }
+                                    progressBar.setVisibility(View.GONE);
                                 }
-
-                                progressBar.setVisibility(View.GONE);
-                            }
-                        });
+                            });
+                }
             }
         });
     }
