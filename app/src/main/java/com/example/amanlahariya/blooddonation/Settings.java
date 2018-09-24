@@ -13,17 +13,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-<<<<<<< HEAD
-import com.example.amanlahariya.blooddonation.AccountActivity.change_password;
-=======
 import com.example.amanlahariya.blooddonation.account_activity.ChangePassword;
 import com.example.amanlahariya.blooddonation.account_activity.ForgotPassword;
-<<<<<<< HEAD
-import com.example.amanlahariya.blooddonation.account_activity.Login_Activity;
->>>>>>> master
-=======
 import com.example.amanlahariya.blooddonation.account_activity.LoginActivity;
->>>>>>> Aman
 
 public class Settings extends Fragment {
     /*private TextView changePass;*/
@@ -55,11 +47,7 @@ public class Settings extends Fragment {
         changePass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-<<<<<<< HEAD
-                Fragment fragment = new change_password();
-=======
                 /*Fragment fragment = new ChangePassword();
->>>>>>> Aman
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.content_main_placeholder,fragment);

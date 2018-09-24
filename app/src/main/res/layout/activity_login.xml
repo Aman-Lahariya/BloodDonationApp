@@ -11,11 +11,14 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="Welcome,"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,17 +26,18 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="Sign in to continue"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-<<<<<<< HEAD
-=======
         android:id="@+id/editText_Mobile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,36 +54,30 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
->>>>>>> master
         android:id="@+id/editText_Password"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:layout_marginTop="159dp"
-        android:drawableLeft="@drawable/ic_lock_open_black_24dp"
-=======
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:drawableStart="@drawable/ic_lock_open_black_24dp"
->>>>>>> master
         android:ems="10"
         android:hint="@string/prompt_password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_Mobile" />
 
     <Button
         android:id="@+id/bt_Sing_In"
-        android:layout_width="0dp"
+        android:layout_width="122dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round"
         android:text="Sign In"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/bt_Forgot_Password"
         app:layout_constraintTop_toBottomOf="@+id/editText_Password" />
 
     <Button
@@ -87,11 +85,12 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="82dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="@string/forgot_password"
         app:layout_constraintEnd_toStartOf="@+id/bt_Sing_In"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_Password" />
 
@@ -99,38 +98,31 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="Don't have an account ?"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bt_Register"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_Forgot_Password"
+        app:layout_constraintVertical_bias="0.912" />
 
     <Button
         android:id="@+id/bt_Register"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="Register here"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView4" />
-
-    <EditText
-        android:id="@+id/editText_Mobile"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:ems="10"
-        android:hint="enter your email address"
-        android:inputType="text|textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/editText_Password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/bt_Sing_In"
+        app:layout_constraintVertical_bias="0.958" />
 
 </android.support.constraint.ConstraintLayout>

@@ -80,15 +80,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_visibility_off_black_24dp.xml" />
-=======
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_person_black_24dp.xml" />
->>>>>>> master
-=======
                                       <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/communication/ic_email_black_24dp.xml" />
->>>>>>> Aman
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -98,17 +90,8 @@
                         </option>
                         <option name="values">
                           <map>
-<<<<<<< HEAD
-                            <entry key="color" value="7e7b7b" />
-                            <entry key="outputName" value="ic_visibility_off_black_24dp" />
-=======
                             <entry key="color" value="040505" />
-<<<<<<< HEAD
-                            <entry key="outputName" value="ic_person_black_24dp" />
->>>>>>> master
-=======
                             <entry key="outputName" value="ic_email_black_24dp" />
->>>>>>> Aman
                             <entry key="overrideSize" value="true" />
                             <entry key="sourceFile" value="C:\Users\Aman Lahariya" />
                           </map>
