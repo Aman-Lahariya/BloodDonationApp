@@ -25,7 +25,8 @@
         android:roundIcon="@mipmap/ic_launcher_blood_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".account_activity.Login_Activity" android:screenOrientation="portrait">
+
+        <activity android:name=".account_activity.LoginActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,17 +34,26 @@
             </intent-filter>
         </activity>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         <activity android:name=".AccountActivity.forgot_password" />
         <activity android:name=".ForgotPassword" />
 =======
         <activity android:name=".account_activity.ForgotPassword" android:screenOrientation="portrait"/>
 >>>>>>> master
+=======
+
+>>>>>>> Aman
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
+
+        <activity android:name=".account_activity.ChangePassword" android:screenOrientation="portrait" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".account_activity.ForgotPassword" android:screenOrientation="portrait"/>
+        <activity android:name=".account_activity.SignupActivity" android:screenOrientation="portrait"/>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -60,7 +70,7 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"/>
 
-        <activity android:name=".account_activity.SignupActivity"/>
+
     </application>
 
 </manifest>

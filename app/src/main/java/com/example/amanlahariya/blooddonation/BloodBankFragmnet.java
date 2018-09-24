@@ -1,18 +1,25 @@
 package com.example.amanlahariya.blooddonation;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -32,6 +39,8 @@ public class BloodBankFragmnet extends Fragment implements OnMapReadyCallback {
     GoogleMap mGoogleMap;
     MapView mMapView;
     View mView;
+    EditText search_field;
+    private static final int PERMISSION_REQUEST_CODE = 1;
 
     public BloodBankFragmnet() {
         // Required empty public constructor
@@ -46,27 +55,40 @@ public class BloodBankFragmnet extends Fragment implements OnMapReadyCallback {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       mView = inflater.inflate(R.layout.fragment_blood_bank_fragmnet, container, false);
-       return mView;
+        mView = inflater.inflate(R.layout.fragment_blood_bank_fragmnet, container, false);
+        return mView;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mMapView = (MapView) mView.findViewById(R.id.mapView_BloodBank);
-        if(mMapView != null){
+        search_field = (EditText) getActivity().findViewById(R.id.editText_Search);
+        Button search = (Button) mView.findViewById(R.id.button_Search);
+
+//      TextView msg = (TextView) mView.findViewById(R.id.textView_BloodBank);
+//      Button allow = (Button) mView.findViewById(R.id.button_Allow_BloodBank);
+
+        if (mMapView != null) {
             mMapView.onCreate(null);
             mMapView.onResume();
             mMapView.getMapAsync(this);
         }
 
-        Button search = (Button) mView.findViewById(R.id.button_Search);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onSearch();
             }
         });
+
+        /*if (i == true && j == true) {
+            search.setVisibility(View.VISIBLE);
+            search_field.setVisibility(View.VISIBLE);
+            mMapView.setVisibility(View.VISIBLE);
+            allow.setVisibility(View.INVISIBLE);
+            msg.setVisibility(View.INVISIBLE);
+        }*/
     }
 
     @Override
@@ -75,22 +97,34 @@ public class BloodBankFragmnet extends Fragment implements OnMapReadyCallback {
         mGoogleMap = googleMap;
         mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
-        LatLng India = new LatLng(18.509890, 73.807182);
-        mGoogleMap.addMarker(new MarkerOptions().position(India).title("Marker in Pune").snippet("Finally displayed the map in fragment"));
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            requestPermission();
+            return;
+        }
+        LatLng India = new LatLng(18.5170, 73.8151);
+        mGoogleMap.addMarker(new MarkerOptions().position(India).title("My Location").snippet("MIT College Of Management"));
         mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(India));
+        mGoogleMap.setMyLocationEnabled(true);
         mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(India,15.0f));
+    }
 
+    private void requestPermission() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)) {
+            Toast.makeText(getActivity(),"GPS permission allows us to access location data. Please allow in App Settings for additional functionality.", Toast.LENGTH_LONG).show();
+        } else {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST_CODE);
+        }
     }
 
     public void onSearch(){
 
-        EditText search = (EditText) getActivity().findViewById(R.id.editText_Search);
-        String location = search.getText().toString();
+        String location = search_field.getText().toString();
         List<Address> addressList = null;
         if(location!=null || !location.equals("")){
             Geocoder geocoder = new Geocoder(getActivity());
             try {
-                addressList = geocoder.getFromLocationName("new york",1);
+                addressList = geocoder.getFromLocationName("Hospital",1);
+                Log.d("address",addressList.toString());
                 Address address = addressList.get(0);
                 LatLng latLng = new LatLng(address.getLatitude(),address.getLongitude());
                 mGoogleMap.addMarker(new MarkerOptions().position(latLng));

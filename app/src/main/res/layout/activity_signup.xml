@@ -28,9 +28,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
+            android:drawableStart="@drawable/ic_email_black_24dp"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/black"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
 
         <EditText
             android:id="@+id/password"
@@ -39,10 +41,12 @@
             android:focusableInTouchMode="true"
             android:hint="@string/hint_password"
             android:imeActionId="@+id/login"
+            android:drawableStart="@drawable/ic_lock_open_black_24dp"
             android:imeOptions="actionUnspecified"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/black"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
 
         <Button
             android:id="@+id/sign_up_button"
@@ -50,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/colorAccent"
+            android:background="@color/bloodColorTheme"
             android:text="@string/action_sign_in_short"
             android:textColor="@android:color/black"
             android:textStyle="bold" />

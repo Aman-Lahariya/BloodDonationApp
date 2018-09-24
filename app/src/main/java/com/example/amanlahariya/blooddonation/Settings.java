@@ -18,8 +18,12 @@ import com.example.amanlahariya.blooddonation.AccountActivity.change_password;
 =======
 import com.example.amanlahariya.blooddonation.account_activity.ChangePassword;
 import com.example.amanlahariya.blooddonation.account_activity.ForgotPassword;
+<<<<<<< HEAD
 import com.example.amanlahariya.blooddonation.account_activity.Login_Activity;
 >>>>>>> master
+=======
+import com.example.amanlahariya.blooddonation.account_activity.LoginActivity;
+>>>>>>> Aman
 
 public class Settings extends Fragment {
     /*private TextView changePass;*/
@@ -51,12 +55,18 @@ public class Settings extends Fragment {
         changePass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 Fragment fragment = new change_password();
+=======
+                /*Fragment fragment = new ChangePassword();
+>>>>>>> Aman
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.content_main_placeholder,fragment);
                 ft.addToBackStack(null);
-                ft.commit();
+                ft.commit();*/
+                Intent intent_change = new Intent(getActivity(),ChangePassword.class);
+                startActivity(intent_change);
             }
         });
 
@@ -80,7 +90,7 @@ public class Settings extends Fragment {
                                 Toast toast = Toast.makeText(getContext(),"Successfully Logged Out!",Toast.LENGTH_LONG);
                                 toast.show();
 
-                                Intent intent_login = new Intent(getActivity(),Login_Activity.class);
+                                Intent intent_login = new Intent(getActivity(),LoginActivity.class);
                                 startActivity(intent_login);
                             }
                         })
