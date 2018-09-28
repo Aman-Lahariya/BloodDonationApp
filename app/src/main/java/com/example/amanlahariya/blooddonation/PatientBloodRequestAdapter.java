@@ -40,9 +40,7 @@ public class PatientBloodRequestAdapter extends RecyclerView.Adapter<PatientBloo
         holder.textViewBloodGroup.setText(PatientBloodRequest.getBloodGroup());
         holder.textViewBloodUnit.setText(String.valueOf(PatientBloodRequest.getBloodUnit()));
         holder.textViewAddress.setText(String.valueOf(PatientBloodRequest.getAddress()));
-
         holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(PatientBloodRequest.getImage()));
-
     }
 
 
@@ -59,7 +57,6 @@ public class PatientBloodRequestAdapter extends RecyclerView.Adapter<PatientBloo
 
         public PatientBloodRequestViewHolder(View itemView) {
             super(itemView);
-
             textViewPatientName = itemView.findViewById(R.id.textView_patientName);
             textViewBloodGroup = itemView.findViewById(R.id.textView_bloodGroup);
             textViewBloodUnit = itemView.findViewById(R.id.textView_bloodUnit);

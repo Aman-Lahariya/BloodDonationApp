@@ -84,17 +84,3 @@ public class NearByFragment extends Fragment {
         recyclerView.setAdapter(adapter);
     }
 }
-
-
-    /*@Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        allow = (Button) getView().findViewById(R.id.button_Allow_NearBy);
-        allow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(),MapsActivity.class);
-                startActivity(i);
-            }
-        });
-    }*/
-

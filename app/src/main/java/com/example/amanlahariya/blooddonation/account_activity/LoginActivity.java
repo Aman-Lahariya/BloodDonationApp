@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-
 import com.example.amanlahariya.blooddonation.MainActivity;
 import com.example.amanlahariya.blooddonation.R;
 import com.google.android.gms.tasks.OnCompleteListener;

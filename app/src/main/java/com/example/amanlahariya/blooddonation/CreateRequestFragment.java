@@ -4,33 +4,39 @@ import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 import java.util.Locale;
-
 
 public class CreateRequestFragment extends Fragment {
 
+
     TextView phone;
     TextInputEditText pname;
-    EditText editText_Date,address,pincode,city;
+    EditText editText_Date;
+    EditText address;
+    EditText pincode;
+    EditText city;
     Spinner bloodGroup,bloodUnit;
     Button save;
     Calendar myCalendar = Calendar.getInstance();
+    RecyclerView ListViewPatients;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
+
     public CreateRequestFragment() {
         // Required empty public constructor
     }
@@ -66,6 +72,7 @@ public class CreateRequestFragment extends Fragment {
         editText_Date = (EditText) getView().findViewById(R.id.editText_Date);
         save = (Button) getView().findViewById(R.id.button_Save_CreateRequest);
 
+
         editText_Date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,16 +85,46 @@ public class CreateRequestFragment extends Fragment {
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
-                //database insertion logic
-                String query = "insert into request values('"+pname.getText().toString()+"',"+Integer.parseInt(phone.getText().toString())+")";
-                Toast toast = Toast.makeText(getActivity(),"Request Sucessfully Created!",Toast.LENGTH_LONG);
-                toast.show();
+            public void onClick(View view) {
+                CreateRequest();
             }
         });
+    }
 
-        /*----------Expiremental Code----------*/
+    //save data to databse
+    private void CreateRequest(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference();
+        String paname = pname.getText().toString().trim();
+        String phoneno = phone.getText().toString().trim();
+        String add = address.getText().toString().trim();
+        String pin = pincode.getText().toString().trim();
+        String town = city.getText().toString().trim();
+        String bloodg = bloodGroup.getSelectedItem().toString();
+        String bloodu = bloodUnit.getSelectedItem().toString();
+        String date = editText_Date.getText().toString().trim();
+        if (!TextUtils.isEmpty(paname)&&!TextUtils.isEmpty(phoneno)&&!TextUtils.isEmpty(add)&&!TextUtils.isEmpty(pin)&&!TextUtils.isEmpty(town)&&!TextUtils.isEmpty(bloodg)&&!TextUtils.isEmpty(bloodu)&&!TextUtils.isEmpty(date)){
+            myRef.child(paname).child("name").setValue(paname);
+            myRef.child(paname).child("no").setValue(phoneno);
+            myRef.child(paname).child("address").setValue(add);
+            myRef.child(paname).child("pincode").setValue(pin);
+            myRef.child(paname).child("city").setValue(town);
+            myRef.child(paname).child("bloodGroup").setValue(bloodg);
+            myRef.child(paname).child("bloodUnit").setValue(bloodu);
+            myRef.child(paname).child("date").setValue(date);
+            Toast.makeText(getActivity(),"Request created succesfully", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(getActivity(),"Please enter all details ", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void updateLabel() {
+        String myFormat = "dd/MM/yy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.ENGLISH);
+        editText_Date.setText(sdf.format(myCalendar.getTime()));
+    }
+
+    /*----------Expiremental Code----------*/
        /* bloodUnit.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -99,11 +136,4 @@ public class CreateRequestFragment extends Fragment {
                 bloodUnit.setPrompt("Select Blood Units!");
             }
         });*/
-    }
-
-    private void updateLabel() {
-        String myFormat = "dd/MM/yy"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.ENGLISH);
-        editText_Date.setText(sdf.format(myCalendar.getTime()));
-    }
 }

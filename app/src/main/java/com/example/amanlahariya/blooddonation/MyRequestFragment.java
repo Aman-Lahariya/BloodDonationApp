@@ -10,13 +10,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class MyRequestFragment extends Fragment {
 
     //a list to store all the products
     List<PatientBloodRequest> productList;
+
+    public Map<String, Boolean> stars = new HashMap<>();
 
     //the recyclerview
     RecyclerView recyclerView;
@@ -35,6 +39,12 @@ public class MyRequestFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_my_request, container, false);
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
     }
 
     @Override
@@ -68,10 +78,13 @@ public class MyRequestFragment extends Fragment {
                         "Kothrud,Pune",
                         R.drawable.ic_person_black_24dp));
 
+
+
         //creating recyclerview adapter
         PatientBloodRequestAdapter adapter = new PatientBloodRequestAdapter(getActivity(), productList);
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
+
     }
 }
