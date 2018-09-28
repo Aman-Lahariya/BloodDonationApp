@@ -37,6 +37,7 @@ public class MyRequestFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_my_request, container, false);
     }
 
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -73,5 +74,6 @@ public class MyRequestFragment extends Fragment {
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
+
     }
 }

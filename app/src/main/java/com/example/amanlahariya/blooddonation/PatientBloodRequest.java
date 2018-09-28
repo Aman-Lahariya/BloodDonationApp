@@ -41,4 +41,6 @@ public class PatientBloodRequest {
     public int getImage() {
         return image;
     }
+
+
 }

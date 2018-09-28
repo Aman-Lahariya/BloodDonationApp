@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,14 +15,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
-
 
 public class CreateRequestFragment extends Fragment {
 
@@ -35,8 +33,9 @@ public class CreateRequestFragment extends Fragment {
     Spinner bloodGroup,bloodUnit;
     Button save;
     Calendar myCalendar = Calendar.getInstance();
-
-
+    RecyclerView ListViewPatients;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
 
     public CreateRequestFragment() {
         // Required empty public constructor
@@ -72,8 +71,7 @@ public class CreateRequestFragment extends Fragment {
         bloodUnit = (Spinner) getView().findViewById(R.id.spinner_BloodUnit);
         editText_Date = (EditText) getView().findViewById(R.id.editText_Date);
         save = (Button) getView().findViewById(R.id.button_Save_CreateRequest);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
+
 
         editText_Date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +91,7 @@ public class CreateRequestFragment extends Fragment {
         });
     }
 
+    //save data to databse
     private void CreateRequest(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
@@ -118,6 +117,8 @@ public class CreateRequestFragment extends Fragment {
             Toast.makeText(getActivity(),"Please enter all details ", Toast.LENGTH_SHORT).show();
         }
     }
+
+    //read data from databse
 
     private void updateLabel() {
         String myFormat = "dd/MM/yy"; //In which you need put here
