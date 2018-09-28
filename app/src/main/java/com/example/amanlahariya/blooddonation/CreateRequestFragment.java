@@ -118,8 +118,6 @@ public class CreateRequestFragment extends Fragment {
         }
     }
 
-    //read data from databse
-
     private void updateLabel() {
         String myFormat = "dd/MM/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.ENGLISH);
