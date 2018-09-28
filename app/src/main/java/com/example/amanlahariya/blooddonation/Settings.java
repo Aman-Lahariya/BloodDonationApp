@@ -38,25 +38,11 @@ public class Settings extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        TextView changePass = (TextView) getView().findViewById(R.id.textView_ChangePassword);
+
         TextView forgotPass = (TextView) getView().findViewById(R.id.textView_Phone);
         TextView logout = (TextView) getView().findViewById(R.id.textView_Logout);
         TextView feedback = (TextView) getView().findViewById(R.id.textView_Feedback);
         TextView ourTeam = (TextView) getView().findViewById(R.id.textView_OurTeam);
-
-        changePass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*Fragment fragment = new ChangePassword();
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.content_main_placeholder,fragment);
-                ft.addToBackStack(null);
-                ft.commit();*/
-                Intent intent_change = new Intent(getActivity(),ChangePassword.class);
-                startActivity(intent_change);
-            }
-        });
 
         forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override

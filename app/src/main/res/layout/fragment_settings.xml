@@ -59,29 +59,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView17">
 
                 <TextView
-                    android:id="@+id/textView_ChangePassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
-                    android:ems="10"
-                    android:onClick="@string/change_password"
-                    android:text="@string/change_password"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
                     android:id="@+id/textView_Phone"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
                     android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
                     android:ems="10"
                     android:text="@string/forgot_password"
@@ -90,20 +73,19 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/divider5" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <View
                     android:id="@+id/divider5"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="8dp"
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView_ChangePassword" />
+                    tools:layout_editor_absoluteY="49dp" />
 
                 <View
                     android:id="@+id/divider6"

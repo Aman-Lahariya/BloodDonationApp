@@ -20,8 +20,6 @@ public class MyRequestFragment extends Fragment {
     //a list to store all the products
     List<PatientBloodRequest> productList;
 
-    public Map<String, Boolean> stars = new HashMap<>();
-
     //the recyclerview
     RecyclerView recyclerView;
 
@@ -63,7 +61,7 @@ public class MyRequestFragment extends Fragment {
         productList.add(
                 new PatientBloodRequest(
                         1,
-                        "Aman Lahariya",
+                        "cj",
                         "O+ve",
                         "2 Units",
                         "Kothrud,Pune",

@@ -64,5 +64,4 @@ public class PatientBloodRequestAdapter extends RecyclerView.Adapter<PatientBloo
             imageView = itemView.findViewById(R.id.imageView);
         }
     }
-
 }
