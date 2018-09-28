@@ -1,5 +1,6 @@
 package com.example.amanlahariya.blooddonation;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,6 +13,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.example.amanlahariya.blooddonation.account_activity.LoginActivity;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,7 +40,6 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.content_main_placeholder, new HomeFragment());
         ft.commit();
-
     }
 
     @Override
@@ -110,7 +117,9 @@ public class MainActivity extends AppCompatActivity
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.content_main_placeholder,fragment);
-            ft.addToBackStack(null);
+            ft.addToBackStack(null);/*
+            Intent intent_sign = new Intent(MainActivity.this, MapsActivity.class);
+            startActivity(intent_sign);*/
 
             Toolbar mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(mActionBarToolbar);

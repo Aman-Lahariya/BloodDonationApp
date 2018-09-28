@@ -1,6 +1,10 @@
 package com.example.amanlahariya.blooddonation;
 
 import android.app.DatePickerDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
@@ -112,7 +116,34 @@ public class CreateRequestFragment extends Fragment {
             myRef.child(paname).child("bloodGroup").setValue(bloodg);
             myRef.child(paname).child("bloodUnit").setValue(bloodu);
             myRef.child(paname).child("date").setValue(date);
+
             Toast.makeText(getActivity(),"Request created succesfully", Toast.LENGTH_SHORT).show();
+
+            // Clearing fields
+            pname.setText("");
+            phone.setText("");
+            address.setText("");
+            pincode.setText("");
+            city.setText("");
+            bloodGroup.setSelection(0);
+            bloodUnit.setSelection(0,true);
+            editText_Date.setText("");
+
+            // Displaying notification
+            Intent intent = new Intent();
+            PendingIntent pIntent = PendingIntent.getActivity(getActivity(),0,intent,0);
+            Notification noti = new Notification.Builder(getActivity())
+                    .setTicker("Request")
+                    .setContentTitle("Blood Request")
+                    .setContentText("A new blood request has been successfully created !")
+                    .setSmallIcon(R.mipmap.ic_launcher_blood_round)
+                    .addAction(R.mipmap.ic_launcher_blood_round,"Action 1",pIntent)	//will add buttons below notification like whatsapp
+                    .addAction(R.mipmap.ic_launcher_blood_round,"Action 2",pIntent)
+                    .setContentIntent(pIntent).getNotification();
+
+            noti.flags = Notification.FLAG_AUTO_CANCEL;	//will remove notification on click
+            NotificationManager nm = (NotificationManager)getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+            nm.notify(0,noti);
         }else {
             Toast.makeText(getActivity(),"Please enter all details ", Toast.LENGTH_SHORT).show();
         }
@@ -124,7 +155,7 @@ public class CreateRequestFragment extends Fragment {
         editText_Date.setText(sdf.format(myCalendar.getTime()));
     }
 
-    /*----------Expiremental Code----------*/
+    /*----------Experimental Code----------*/
        /* bloodUnit.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

@@ -53,7 +53,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_person_black_24dp"
-                    android:hint="@string/patient_name" />
+                    android:hint="@string/patient_name"
+                    android:padding="10dp"/>
             </android.support.design.widget.TextInputLayout>
 
             <EditText
@@ -68,6 +69,7 @@
                 android:ems="10"
                 android:hint="@string/prompt_mobile"
                 android:inputType="phone"
+                android:padding="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -80,6 +82,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="16dp"
+                android:padding="5dp"
                 android:background="@drawable/border_dark_background"
                 android:clickable="true"
                 android:editable="false"
@@ -99,6 +102,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="16dp"
+                android:padding="10dp"
                 android:background="@drawable/border_dark_background"
                 android:drawableStart="@drawable/ic_location_city_black_24dp"
                 android:ems="10"
@@ -116,6 +120,7 @@
                 android:layout_marginEnd="1dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="16dp"
+                android:padding="5dp"
                 android:background="@drawable/border_dark_background"
                 android:drawableStart="@drawable/ic_fiber_pin_black_24dp"
                 android:ems="10"
@@ -132,6 +137,7 @@
                 android:layout_height="35dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginTop="16dp"
+                android:padding="5dp"
                 android:background="@drawable/border_dark_background"
                 android:drawableStart="@drawable/ic_place_black_24dp"
                 android:ems="10"

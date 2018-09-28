@@ -4,19 +4,31 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -25,6 +37,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final int PERMISSION_REQUEST_CODE = 1;
     Activity activity;
     private GoogleApiClient client;
+
+
+    GoogleMap mGoogleMap;
+    MapView mMapView;
+    View mView;
+    EditText search_field;
+    Button search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +55,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        search_field = (EditText)findViewById(R.id.editText_Search);
+        search = (Button) findViewById(R.id.button_Search);
     }
 
     /**
@@ -49,23 +71,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        LatLng India = new LatLng(18.509890, 73.807182);
-        mMap.addMarker(new MarkerOptions().position(India).title("Marker in Pune"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(India));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(India, 15.0f));
+
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
             requestPermission();
             return;
         }
-        mMap.setMyLocationEnabled(true);
+        mGoogleMap = googleMap;
+        mGoogleMap.setMyLocationEnabled(true);
+        LatLng myCurrentLocation = new LatLng(18.5170, 73.8151);
+        mGoogleMap.addMarker(new MarkerOptions().position(myCurrentLocation).title("My Location").snippet("MIT College Of Management"));
+        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(myCurrentLocation));
+        mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myCurrentLocation,15.0f));
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onSearch();
+            }
+        });
     }
 
     private void requestPermission() {
@@ -73,6 +97,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             Toast.makeText(context, "GPS permission allows us to access location data. Please allow in App Settings for additional functionality.", Toast.LENGTH_LONG).show();
         } else {
             ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST_CODE);
+        }
+    }
+
+    public void onSearch(){
+
+        String location = search_field.getText().toString();
+        List<Address> addressList = new ArrayList<>();
+        if(location!=null || !location.equals("")){
+            Geocoder geocoder = new Geocoder(MapsActivity.this);
+            try {
+                addressList = geocoder.getFromLocationName(location,1);
+                if (addressList.size() > 0) {
+                    Address address = addressList.get(0);
+                    LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+                    mGoogleMap.addMarker(new MarkerOptions().position(latLng));
+                    mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                    mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15.0f));
+                    Toast toast2 = Toast.makeText(MapsActivity.this, "Showing " + address + "!", Toast.LENGTH_LONG);
+                    toast2.show();
+                }
+                Log.d("address", addressList.toString());
+
+            }catch(IOException e){
+                e.printStackTrace();
+
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import com.example.amanlahariya.blooddonation.MainActivity;
 import com.example.amanlahariya.blooddonation.R;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText etMobileView;
     private EditText etPasswordView;
+    private ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
 
@@ -35,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         Button login = (Button) findViewById(R.id.bt_Sing_In);
         Button forgot = (Button) findViewById(R.id.bt_Forgot_Password);
         Button register = (Button) findViewById(R.id.bt_Register);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar_Login);
         mAuth = FirebaseAuth.getInstance();
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -84,10 +87,10 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         else {
+            progressBar.setVisibility(View.VISIBLE);
             mAuth.signInWithEmailAndPassword(user, pass)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         private static final String TAG = "MainActivity";
-
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
@@ -97,11 +100,12 @@ public class LoginActivity extends AppCompatActivity {
                                 //updateUI(user);
                                 Intent intent_sign = new Intent(LoginActivity.this,MainActivity.class);
                                 startActivity(intent_sign);
+                                progressBar.setVisibility(View.GONE);
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility(View.GONE);
                                 //updateUI(null);
                             }
                         }
