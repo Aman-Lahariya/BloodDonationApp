@@ -42,30 +42,50 @@ public class ChangePassword extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                boolean flag = true;
                 String old = oldPass.getText().toString().trim();
                 String email = emailAddr.getText().toString().trim();
+                String newPassword = newPass.getText().toString().trim();
+                String cnfrmPassword = cnfrmPass.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplication(), "Enter your registered email id", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else {
-                    progressBar.setVisibility(View.VISIBLE);
-                    mAuth.sendPasswordResetEmail(email)
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(ChangePassword.this, "We have sent you instructions to reset your password!", Toast.LENGTH_SHORT).show();
-                                    } else {
-                                        Toast.makeText(ChangePassword.this, "Failed to send reset email!", Toast.LENGTH_SHORT).show();
+                if (old.equals("")) {
+                    flag = false;
+                    oldPass.setError(getString(R.string.error_field_required));
+                }
+                if (newPassword.equals("")) {
+                    flag = false;
+                    newPass.setError(getString(R.string.error_field_required));
+                }
+                if (cnfrmPassword.equals("")) {
+                    flag = false;
+                    cnfrmPass.setError(getString(R.string.error_field_required));
+                }
+
+                if (flag) {
+                    if (newPassword.equals(cnfrmPassword)) {
+                        progressBar.setVisibility(View.VISIBLE);
+                        mAuth.sendPasswordResetEmail(email)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(ChangePassword.this, "We have sent you instructions to reset your password!", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Toast.makeText(ChangePassword.this, "Failed to send reset email!", Toast.LENGTH_SHORT).show();
+                                        }
+                                        progressBar.setVisibility(View.GONE);
                                     }
-                                    progressBar.setVisibility(View.GONE);
-                                }
-                            });
+                                });
+                    } else {
+                        Toast toast = Toast.makeText(getApplicationContext(), "Password don't match\nBoth passwords must be same! !", Toast.LENGTH_LONG);
+                        toast.show();
+                    }
                 }
             }
         });
     }
-
 }
