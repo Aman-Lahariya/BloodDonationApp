@@ -98,6 +98,8 @@ public class LoginActivity extends AppCompatActivity {
                                 Log.d(TAG, "signInWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 //updateUI(user);
+                                Toast.makeText(LoginActivity.this, "Logged in Successfully",
+                                        Toast.LENGTH_SHORT).show();
                                 Intent intent_sign = new Intent(LoginActivity.this,MainActivity.class);
                                 startActivity(intent_sign);
                                 progressBar.setVisibility(View.GONE);

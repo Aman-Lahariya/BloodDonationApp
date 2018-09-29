@@ -38,6 +38,7 @@ public class Settings extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+
         TextView changePass = (TextView) getView().findViewById(R.id.textView_ChangePassword);
         TextView forgotPass = (TextView) getView().findViewById(R.id.textView_Phone);
         TextView logout = (TextView) getView().findViewById(R.id.textView_Logout);

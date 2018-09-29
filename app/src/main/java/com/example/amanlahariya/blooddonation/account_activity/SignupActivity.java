@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class SignupActivity extends AppCompatActivity {
-    private EditText inputEmail, inputPassword;     //hit option + enter if you on mac , for windows hit ctrl + enter
+    public EditText inputEmail, inputPassword;     //hit option + enter if you on mac , for windows hit ctrl + enter
     public Button btnResetPassword;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
@@ -76,7 +76,7 @@ public class SignupActivity extends AppCompatActivity {
                         .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText(SignupActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignupActivity.this, "Registration Successfull", Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
@@ -84,8 +84,7 @@ public class SignupActivity extends AppCompatActivity {
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(SignupActivity.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
-                                } else {
-                                    startActivity(new Intent(SignupActivity.this, MainActivity.class));
+                                }else {
                                     finish();
                                 }
                             }

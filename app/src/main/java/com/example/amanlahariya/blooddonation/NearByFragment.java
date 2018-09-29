@@ -6,19 +6,19 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class NearByFragment extends Fragment {
 
     //a list to store all the products
     List<PatientBloodRequest> productList;
 
-    //the recyclerview
+   //the recyclerview
     RecyclerView recyclerView;
 
     public NearByFragment () {
@@ -28,6 +28,7 @@ public class NearByFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -36,6 +37,7 @@ public class NearByFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_near_by, container, false);
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -82,5 +84,6 @@ public class NearByFragment extends Fragment {
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
+
     }
 }

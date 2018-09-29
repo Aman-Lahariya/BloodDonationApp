@@ -27,7 +27,6 @@ import java.util.Locale;
 
 public class CreateRequestFragment extends Fragment {
 
-
     TextView phone;
     TextInputEditText pname;
     EditText editText_Date;
@@ -148,6 +147,8 @@ public class CreateRequestFragment extends Fragment {
             Toast.makeText(getActivity(),"Please enter all details ", Toast.LENGTH_SHORT).show();
         }
     }
+
+
 
     private void updateLabel() {
         String myFormat = "dd/MM/yy"; //In which you need put here
